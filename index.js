@@ -1,11 +1,15 @@
  let KatzDeliLine = [];
+ 
+ let servingNumber = 0;
 
 function takeANumber (KatzDeliLine, string) {
   let i = KatzDeliLine.length - 1;
   
-  KatzDeliLine.push(string);
+  servingNumber++;
   
-  return (`Welcome, ${string}. You are number ${KatzDeliLine.length} in line.`);
+  KatzDeliLine.push(`${servingNumber}`);
+  
+  return (`Welcome, ${servingNumber}. You are number ${KatzDeliLine.length} in line.`);
 }
 
 function nowServing(deliLine) {
@@ -20,14 +24,14 @@ function nowServing(deliLine) {
 
 function currentLine(line) {
   
-  let nameAndNumber = [];
-  
   if (line.length === 0){
     return "The line is currently empty.";
   }
   for (let i = 0; i < line.length; i++) {
-    nameAndNumber.push(i + 1 + `. ${line[i]}`);
       
-  }return `The line is currently: ${nameAndNumber.join(", ")}`;
+      
+  }return `The line is currently: ${servingNumber.join(", ")}`;
 }
+
+
 
